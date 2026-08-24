@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nazmi Şener - Akademik Web Sitesi</title>
+    <title>Nazmi Şener, Ph.D. - Akademik Web Sitesi</title>
     <style>
         :root { 
             --primary: #1e3a8a; 
@@ -22,34 +22,43 @@
             line-height: 1.6; 
         }
         
-        /* Arka Plan Kodlama/Optimizasyon Görselli Header */
+        /* Yan Yana Düzen için Flexbox Destekli Header */
         header { 
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.88)), 
                         url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; 
             color: white; 
             padding: 40px 20px; 
-            text-align: center; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
         }
         
-        /* Profil Fotoğrafı Stili - 1:1 Dairesel & Yüz Odaklı */
+        /* Profil Fotoğrafı Stili - Sol Taraf */
         .profile-img {
             width: 130px;
             height: 130px;
             border-radius: 50%;
             border: 3px solid #93c5fd;
             object-fit: cover;
-            object-position: 50% 25%; /* Fotoğrafın üst/yüz kısmına odaklanır */
-            margin-bottom: 15px;
+            object-position: 50% 25%;
             box-shadow: 0 4px 12px rgba(0,0,0,0.35);
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
         .profile-img:hover {
             transform: scale(1.03);
         }
 
+        /* Fotoğraf Yanındaki Metin Alanı */
+        .header-text {
+            text-align: left;
+        }
+
         header h1 { margin: 0; font-size: 2.2em; font-weight: 700; }
-        header p { margin: 8px 0 0 0; font-size: 1.1em; opacity: 0.95; }
-        .contact-info { margin-top: 12px; font-size: 0.95em; }
+        header p { margin: 6px 0 0 0; font-size: 1.1em; opacity: 0.95; }
+        .contact-info { margin-top: 10px; font-size: 0.95em; }
         .contact-info a { color: #93c5fd; text-decoration: none; }
 
         /* Navigasyon & Dil Seçimi */
@@ -124,15 +133,17 @@
 <body>
 
     <header>
-        <img src="profil.jpg" alt="Dr. Nazmi Şener" class="profile-img">
+        <img src="profil.jpg" alt="Nazmi Şener, Ph.D." class="profile-img">
         
-        <h1>Dr. Nazmi ŞENER</h1>
-        <p>
-            <span class="tr-content">Endüstri Mühendisliği | Yöneylem Araştırması ve Optimizasyon</span>
-            <span class="en-content">Industrial Engineering | Operations Research & Optimization</span>
-        </p>
-        <div class="contact-info">
-            ✉️ <a href="mailto:nazmi.sener@alanya.edu.tr">nazmi.sener@alanya.edu.tr</a>
+        <div class="header-text">
+            <h1>Nazmi ŞENER, Ph.D.</h1>
+            <p>
+                <span class="tr-content">Endüstri Mühendisliği | Yöneylem Araştırması ve Optimizasyon</span>
+                <span class="en-content">Industrial Engineering | Operations Research & Optimization</span>
+            </p>
+            <div class="contact-info">
+                ✉️ <a href="mailto:nazmi.sener@alanya.edu.tr">nazmi.sener@alanya.edu.tr</a>
+            </div>
         </div>
     </header>
 

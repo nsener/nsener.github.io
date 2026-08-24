@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nazmi Şener - Academic Webpage</title>
+    <title>Dr. Nazmi Şener - Akademik Web Sitesi</title>
     <style>
         :root { 
             --primary: #1e3a8a; 
-            --secondary: #3b82f6; 
+            --secondary: #2563eb; 
             --dark: #0f172a; 
             --bg: #f8fafc; 
             --text: #334155; 
-            --border: #e2e8f0;
+            --border: #cbd5e1;
+            --success: #16a34a;
         }
         body { 
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
@@ -21,19 +22,19 @@
             line-height: 1.6; 
         }
         
-        /* Header & Banner */
+        /* Başlık ve Banner */
         header { 
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); 
             color: white; 
             padding: 40px 20px; 
             text-align: center; 
         }
-        header h1 { margin: 0; font-size: 2.4em; font-weight: 700; letter-spacing: -0.5px; }
+        header h1 { margin: 0; font-size: 2.3em; font-weight: 700; }
         header p { margin: 10px 0 0 0; font-size: 1.1em; opacity: 0.9; }
-        .contact-info { margin-top: 15px; font-size: 0.95em; }
+        .contact-info { margin-top: 12px; font-size: 0.95em; }
         .contact-info a { color: #93c5fd; text-decoration: none; }
 
-        /* Navigation Bar & Language Controls */
+        /* Navigasyon & Dil Seçimi */
         nav { 
             background-color: var(--dark); 
             display: flex; 
@@ -69,54 +70,62 @@
         }
         .lang-btn.active-lang { background: var(--secondary) !important; font-weight: bold; }
 
-        /* Main Container */
-        .container { max-width: 1000px; margin: 30px auto; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        /* Ana İçerik Kutusu */
+        .container { max-width: 950px; margin: 30px auto; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         
-        /* Typography & Components */
-        h2 { color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-top: 25px; font-size: 1.5em; }
+        /* Tipografi ve Bileşenler */
+        h2 { color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-top: 25px; font-size: 1.4em; }
         h3 { color: var(--secondary); margin-bottom: 5px; font-size: 1.15em; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
         a { color: var(--secondary); text-decoration: none; }
         a:hover { text-decoration: underline; }
-        .badge { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600; }
+        .badge { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600; margin-right: 8px; }
         
-        /* Timelines & Cards */
+        /* Zaman Çizelgesi ve Kartlar */
         .timeline-item { border-left: 3px solid var(--secondary); padding-left: 15px; margin-bottom: 20px; }
         .timeline-date { font-size: 0.85em; font-weight: bold; color: #64748b; }
         .pub-item { background: #f8fafc; border: 1px solid var(--border); padding: 15px; border-radius: 6px; margin-bottom: 12px; }
         .pub-title { font-weight: bold; color: #1e293b; }
         .announcement { background: #eff6ff; border-left: 4px solid var(--secondary); padding: 15px; margin-bottom: 15px; border-radius: 0 6px 6px 0; }
 
-        /* Language Toggle Classes */
+        /* Dersler Kilit/Erişim Sistemi Style */
+        .course-card { background: #f8fafc; border: 1px solid var(--border); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .course-lock { background: #fff; border: 1px dashed var(--secondary); padding: 15px; border-radius: 6px; margin-top: 10px; }
+        .course-lock input { padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.9em; width: 180px; }
+        .course-lock button { background: var(--secondary); color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        .course-lock button:hover { background: var(--primary); }
+        .unlocked-badge { background: #dcfce7; color: var(--success); font-weight: bold; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+
+        /* Dil Gizleme Sınıfı */
         .en-content { display: none; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Nazmi ŞENER, Ph.D.</h1>
+        <h1>Dr. Nazmi ŞENER</h1>
         <p>
-            <span class="tr-content">Endüstri Mühendisliği | Yöneylem Araştırması & Optimizasyon</span>
+            <span class="tr-content">Endüstri Mühendisliği | Yöneylem Araştırması ve Optimizasyon</span>
             <span class="en-content">Industrial Engineering | Operations Research & Optimization</span>
         </p>
         <div class="contact-info">
-            📧 <a href="mailto:sener.nazmi@gmail.com">sener.nazmi@gmail.com</a>
+            ✉️ <a href="mailto:nazmi.sener@alanya.edu.tr">nazmi.sener@alanya.edu.tr</a>
         </div>
     </header>
 
     <nav>
         <div class="nav-links">
             <button class="tab-link active" onclick="openTab(event, 'hakkimda')">
-                <span class="tr-content">Hakkımda & Özgeçmiş</span><span class="en-content">About & CV</span>
+                <span class="tr-content">Hakkımda ve Özgeçmiş</span><span class="en-content">About & CV</span>
             </button>
             <button class="tab-link" onclick="openTab(event, 'yayinlar')">
-                <span class="tr-content">Yayınlar & Projeler</span><span class="en-content">Publications & Projects</span>
+                <span class="tr-content">Yayınlar ve Projeler</span><span class="en-content">Publications & Projects</span>
             </button>
             <button class="tab-link" onclick="openTab(event, 'dersler')">
-                <span class="tr-content">Dersler</span><span class="en-content">Teaching</span>
+                <span class="tr-content">Dersler</span><span class="en-content">Courses</span>
             </button>
             <button class="tab-link" onclick="openTab(event, 'duyurular')">
                 <span class="tr-content">Duyurular</span><span class="en-content">Announcements</span>
@@ -131,61 +140,86 @@
 
     <div class="container">
         
-        <!-- HAKKIMDA / ABOUT ME -->
+        <!-- HAKKIMDA VE ÖZGEÇMİŞ -->
         <div id="hakkimda" class="tab-content active">
             <h2><span class="tr-content">Akademik Görevler</span><span class="en-content">Employment History</span></h2>
             
             <div class="timeline-item">
                 <div class="timeline-date">2024 - 2026</div>
-                <strong>Postdoctoral Researcher</strong> - Department of Mechanical, Energy and Management Engineering, University of Calabria, Italy.
+                <span class="tr-content"><strong>Doktora Sonrası Araştırmacı</strong> - Makine, Enerji ve Yönetim Mühendisliği Bölümü, Calabria Üniversitesi, Rende, İtalya.</span>
+                <span class="en-content"><strong>Postdoctoral Researcher</strong> - Department of Mechanical, Energy and Management Engineering, University of Calabria, Rende (CS), Italy.</span>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">2022 - Present</div>
-                <strong>Assistant Professor (Dr. Öğr. Üyesi)</strong> - Department of Industrial Engineering, Alanya Alaaddin Keykubat University, Turkiye.
+                <div class="timeline-date">2022 - Halen</div>
+                <span class="tr-content"><strong>Doktor Öğretim Üyesi</strong> - Endüstri Mühendisliği Bölümü, Mühendislik Fakültesi, Alanya Alaaddin Keykubat Üniversitesi, Antalya, Türkiye.</span>
+                <span class="en-content"><strong>Assistant Professor</strong> - Department of Industrial Engineering, Faculty of Engineering, Alanya Alaaddin Keykubat University, Antalya, Turkiye.</span>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2012 - 2020</div>
-                <strong>Research Assistant (Arş. Gör.)</strong> - Department of Industrial Engineering, Galatasaray University, Istanbul, Turkiye.
+                <span class="tr-content"><strong>Araştırma Görevlisi</strong> - Endüstri Mühendisliği Bölümü, Fen Bilimleri Enstitüsü, Galatasaray Üniversitesi, İstanbul, Türkiye.</span>
+                <span class="en-content"><strong>Research Assistant</strong> - Department of Industrial Engineering, Graduate School of Science and Engineering, Galatasaray University, Istanbul, Turkiye.</span>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2010 - 2012</div>
-                <strong>Research Assistant (Arş. Gör.)</strong> - Department of Industrial Engineering, Yalova University, Yalova, Turkiye.
+                <span class="tr-content"><strong>Araştırma Görevlisi</strong> - Endüstri Mühendisliği Bölümü, Mühendislik Fakültesi, Yalova Üniversitesi, Yalova, Türkiye.</span>
+                <span class="en-content"><strong>Research Assistant</strong> - Department of Industrial Engineering, Faculty of Engineering, Yalova University, Yalova, Turkiye.</span>
             </div>
 
             <h2><span class="tr-content">Eğitim</span><span class="en-content">Education</span></h2>
             <div class="timeline-item">
                 <div class="timeline-date">2014 - 2020</div>
-                <strong>Ph.D. in Industrial Engineering</strong> - Galatasaray University, Istanbul, Turkiye.<br>
-                <em>Thesis: New optimization models for the hub covering location problem.</em>
+                <span class="tr-content"><strong>Doktora (Endüstri Mühendisliği)</strong> - Galatasaray Üniversitesi, İstanbul.<br><em>Tez Adı: Hub kapsama yer seçimi problemi için yeni optimizasyon modelleri.</em></span>
+                <span class="en-content"><strong>Ph.D. in Industrial Engineering</strong> - Galatasaray University, Istanbul, Turkiye.<br><em>Thesis: New optimization models for the hub covering location problem.</em></span>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2011 - 2014</div>
-                <strong>M.Sc. in Industrial Engineering</strong> - Galatasaray University, Istanbul, Turkiye.<br>
-                <em>Thesis: Risk-averse appointment scheduling for healthcare institutions.</em>
+                <span class="tr-content"><strong>Yüksek Lisans (Endüstri Mühendisliği)</strong> - Galatasaray Üniversitesi, İstanbul.<br><em>Tez Adı: Sağlık kurumları için riske duyarlı randevu planlaması.</em></span>
+                <span class="en-content"><strong>M.Sc. in Industrial Engineering</strong> - Galatasaray University, Istanbul, Turkiye.<br><em>Thesis: Risk-averse appointment scheduling for healthcare institutions.</em></span>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2006 - 2010</div>
-                <strong>B.Sc. in Industrial Engineering</strong> - Dokuz Eylul University, Izmir, Turkiye.
+                <span class="tr-content"><strong>Lisans (Endüstri Mühendisliği)</strong> - Dokuz Eylül Üniversitesi, İzmir.</span>
+                <span class="en-content"><strong>B.Sc. in Industrial Engineering</strong> - Dokuz Eylul University, Izmir, Turkiye.</span>
             </div>
 
-            <h2><span class="tr-content">Beceriler & Üyelikler</span><span class="en-content">Skills & Memberships</span></h2>
+            <h2><span class="tr-content">Beceriler ve Üyelikler</span><span class="en-content">Skills & Memberships</span></h2>
             <p><strong><span class="tr-content">Programlama / Diller:</span><span class="en-content">Coding:</span></strong> Python, C, LaTeX, Matlab</p>
             <p><strong><span class="tr-content">Optimizasyon Yazılımları:</span><span class="en-content">Optimization Softwares:</span></strong> Gurobi, CPLEX, GAMS, AMPL</p>
-            <p><strong><span class="tr-content">Mesleki Üyelikler:</span><span class="en-content">Memberships:</span></strong> Turkish OR Society (TORS), European WG on Stochastic Programming & Applications (EWGSP)</p>
+            <p><strong><span class="tr-content">Mesleki Üyelikler:</span><span class="en-content">Memberships:</span></strong> <span class="tr-content">Yöneylem Araştırması Derneği (YAD), Avrupa Stokastik Programlama ve Uygulamaları Çalışma Grubu (EWGSP)</span><span class="en-content">Turkish OR Society (TORS), European WG on Stochastic Programming & Applications (EWGSP)</span></p>
             
             <h2><span class="tr-content">Ödüller ve Teşvikler</span><span class="en-content">Awards & Grants</span></h2>
             <ul>
-                <li><span class="badge">2026</span> TÜBİTAK UBYT - International Scientific Publication Incentive (Computers & Operations Research)</li>
-                <li><span class="badge">2024</span> TÜBİTAK UBYT - International Scientific Publication Incentive (IEEE Access)</li>
-                <li><span class="badge">2023</span> TÜBİTAK 2224-A - Scientific Meetings Abroad Grant</li>
-                <li><span class="badge">2021</span> TÜBİTAK UBYT - International Scientific Publication Incentive (Annals of Operations Research)</li>
-                <li><span class="badge">2010</span> YÖK - Academician Training Program (ÖYP) Grant</li>
+                <li>
+                    <span class="badge">2026</span>
+                    <span class="tr-content">TÜBİTAK Uluslararası Bilimsel Yayınları Teşvik Ödülü (UBYT) - <em>Computers & Operations Research</em> dergisindeki makale için</span>
+                    <span class="en-content">TÜBİTAK International Scientific Publication Incentive (UBYT) - for the article in <em>Computers & Operations Research</em></span>
+                </li>
+                <li>
+                    <span class="badge">2024</span>
+                    <span class="tr-content">TÜBİTAK Uluslararası Bilimsel Yayınları Teşvik Ödülü (UBYT) - <em>IEEE Access</em> dergisindeki makale için</span>
+                    <span class="en-content">TÜBİTAK International Scientific Publication Incentive (UBYT) - for the article in <em>IEEE Access</em></span>
+                </li>
+                <li>
+                    <span class="badge">2023</span>
+                    <span class="tr-content">TÜBİTAK 2224-A Yurt Dışı Bilimsel Etkinliklere Katılma Desteği</span>
+                    <span class="en-content">TÜBİTAK 2224-A Program Grant for Scientific Meetings Abroad</span>
+                </li>
+                <li>
+                    <span class="badge">2021</span>
+                    <span class="tr-content">TÜBİTAK Uluslararası Bilimsel Yayınları Teşvik Ödülü (UBYT) - <em>Annals of Operations Research</em> dergisindeki makale için</span>
+                    <span class="en-content">TÜBİTAK International Scientific Publication Incentive (UBYT) - for the article in <em>Annals of Operations Research</em></span>
+                </li>
+                <li>
+                    <span class="badge">2010</span>
+                    <span class="tr-content">YÖK Öğretim Elemanı Yetiştirme Programı (ÖYP) Bursu</span>
+                    <span class="en-content">YÖK Academician Training Program Grant</span>
+                </li>
             </ul>
         </div>
 
-        <!-- YAYINLAR & PROJELER / PUBLICATIONS & PROJECTS -->
+        <!-- YAYINLAR VE PROJELER -->
         <div id="yayinlar" class="tab-content">
-            <h2><span class="tr-content">Makaleler (Journal Articles)</span><span class="en-content">Journal Articles</span></h2>
+            <h2><span class="tr-content">Makaleler</span><span class="en-content">Journal Articles</span></h2>
             
             <div class="pub-item">
                 <div class="pub-title">P. Beraldi, L. Gallo, and N. Sener, "Reinforcement learning-driven progressive hedging for risk averse polygeneration system design"</div>
@@ -238,19 +272,21 @@
             <h2><span class="tr-content">Araştırma Projeleri</span><span class="en-content">Research Projects</span></h2>
             <ul>
                 <li>
-                    <strong>Large-scale optimization for sustainable and resilient energy systems</strong> (2023 - 2026)<br>
-                    Funded by European Union - NextGenerationEU, University of Calabria, Italy. <br>
-                    <em>Role: Researcher | Budget: €249,998 | Grant No: 2022BMBW2A</em>
+                    <strong>Sürdürülebilir ve Esnek Enerji Sistemleri İçin Büyük Ölçekli Optimizasyon</strong> (2023 - 2026)<br>
+                    <span class="tr-content">Avrupa Birliği - NextGenerationEU Fonu, Calabria Üniversitesi, İtalya.<br><em>Görev: Araştırmacı | Bütçe: €249,998 | Proje No: 2022BMBW2A</em></span>
+                    <span class="en-content">Funded by European Union - NextGenerationEU, University of Calabria, Italy.<br><em>Role: Researcher | Budget: €249,998 | Grant No: 2022BMBW2A</em></span>
                 </li>
+                <br>
                 <li>
-                    <strong>Hub location problems in logistic networks</strong> (2017 - 2019)<br>
-                    Funded by Galatasaray University BAP, Turkey.<br>
-                    <em>Role: Researcher | Budget: $5,500 | Grant No: 17.402.007</em>
+                    <strong>Lojistik Ağlarında Hub Yer Seçimi Problemleri</strong> (2017 - 2019)<br>
+                    <span class="tr-content">Galatasaray Üniversitesi BAP Koordinatörlüğü.<br><em>Görev: Araştırmacı | Bütçe: $5,500 | Proje No: 17.402.007</em></span>
+                    <span class="en-content">Funded by Galatasaray University BAP, Turkey.<br><em>Role: Researcher | Budget: $5,500 | Grant No: 17.402.007</em></span>
                 </li>
+                <br>
                 <li>
-                    <strong>An analysis of profit maximization problem of telecommunications intermediaries...</strong> (2013 - 2015)<br>
-                    Funded by University of Yalova BAP, Turkey.<br>
-                    <em>Role: Researcher | Budget: $6,000 | Grant No: 2013/BAP/51</em>
+                    <strong>Telekomünikasyon Aracılarının Farklı Fiyatlandırma Politikaları Altında Kâr Maksimizasyonu Probleminin Analizi</strong> (2013 - 2015)<br>
+                    <span class="tr-content">Yalova Üniversitesi BAP Koordinatörlüğü.<br><em>Görev: Araştırmacı | Bütçe: $6,000 | Proje No: 2013/BAP/51</em></span>
+                    <span class="en-content">Funded by University of Yalova BAP, Turkey.<br><em>Role: Researcher | Budget: $6,000 | Grant No: 2013/BAP/51</em></span>
                 </li>
             </ul>
 
@@ -264,54 +300,119 @@
             </ul>
         </div>
 
-        <!-- DERSLER / TEACHING -->
+        <!-- DERSLER (ŞİFRELİ ERİŞİM) -->
         <div id="dersler" class="tab-content">
-            <h2><span class="tr-content">Verilen Dersler</span><span class="en-content">Teaching Activities</span></h2>
-            <p><span class="tr-content">Alanya Alaaddin Keykubat Üniversitesi bünyesinde verilen dersler:</span>
-               <span class="en-content">Courses taught at Alanya Alaaddin Keykubat University:</span></p>
+            <h2><span class="tr-content">Akademik Dersler</span><span class="en-content">Courses</span></h2>
+            <p>
+                <span class="tr-content">Ders izlencelerine, sunumlara ve özel duyurulara ulaşmak için ders şifrenizi giriniz:</span>
+                <span class="en-content">Please enter the course passcode to access syllabi, slides, and announcements:</span>
+            </p>
 
-            <div class="pub-item">
-                <h3>END 447: Stochastic Problems / Kesikli Problemler</h3>
-                <p>Lisans / Undergraduate Course</p>
-                📄 <a href="dosyalar/END447-syllabus.pdf" target="_blank">
-                    <span class="tr-content">Ders İzlencesini İndir (Syllabus PDF)</span>
-                    <span class="en-content">Download Syllabus (PDF)</span>
-                </a>
+            <!-- DERS 1: END 447 -->
+            <div class="course-card">
+                <h3>
+                    <span class="tr-content">END 447: Stokastik Problemler</span>
+                    <span class="en-content">END 447: Stochastic Problems</span>
+                </h3>
+                <p><strong><span class="tr-content">Lisans Dersi</span><span class="en-content">Undergraduate Course</span></strong></p>
+                
+                <div id="lock-447" class="course-lock">
+                    <span class="tr-content">Ders İçeriğine Erişim Kodu:</span>
+                    <span class="en-content">Access Passcode:</span> 
+                    <input type="password" id="pass-447" placeholder="Şifre">
+                    <button onclick="unlockCourse('447', 'END447')">
+                        <span class="tr-content">Giriş</span><span class="en-content">Submit</span>
+                    </button>
+                    <div id="err-447" style="color:red; display:none; margin-top:5px; font-size:0.9em;">
+                        <span class="tr-content">Hatalı kod! Lütfen tekrar deneyin.</span>
+                        <span class="en-content">Incorrect code! Please try again.</span>
+                    </div>
+                </div>
+
+                <div id="content-447" style="display:none; margin-top:15px;">
+                    <span class="unlocked-badge"><span class="tr-content">✓ Erişim Onaylandı</span><span class="en-content">✓ Access Granted</span></span>
+                    <ul>
+                        <li>📄 <a href="dosyalar/END447-izlence.pdf" target="_blank"><span class="tr-content">Ders İzlencesini İndir</span><span class="en-content">Download Syllabus</span></a></li>
+                        <li>📁 <a href="#"><span class="tr-content">Ders Notları ve Ödevler</span><span class="en-content">Lecture Notes & Homeworks</span></a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="pub-item">
-                <h3>END 527: Stochastic Processes / Stokastik Süreçler</h3>
-                <p>Yüksek Lisans / Graduate Course</p>
-                📄 <a href="dosyalar/END527-syllabus.pdf" target="_blank">Syllabus (PDF)</a>
+            <!-- DERS 2: END 527 -->
+            <div class="course-card">
+                <h3>
+                    <span class="tr-content">END 527: Stokastik Süreçler</span>
+                    <span class="en-content">END 527: Stochastic Processes</span>
+                </h3>
+                <p><strong><span class="tr-content">Yüksek Lisans Dersi</span><span class="en-content">Graduate Course</span></strong></p>
+                
+                <div id="lock-527" class="course-lock">
+                    <span class="tr-content">Ders İçeriğine Erişim Kodu:</span>
+                    <span class="en-content">Access Passcode:</span> 
+                    <input type="password" id="pass-527" placeholder="Şifre">
+                    <button onclick="unlockCourse('527', 'END527')">
+                        <span class="tr-content">Giriş</span><span class="en-content">Submit</span>
+                    </button>
+                    <div id="err-527" style="color:red; display:none; margin-top:5px; font-size:0.9em;">
+                        <span class="tr-content">Hatalı kod! Lütfen tekrar deneyin.</span>
+                        <span class="en-content">Incorrect code! Please try again.</span>
+                    </div>
+                </div>
+
+                <div id="content-527" style="display:none; margin-top:15px;">
+                    <span class="unlocked-badge"><span class="tr-content">✓ Erişim Onaylandı</span><span class="en-content">✓ Access Granted</span></span>
+                    <ul>
+                        <li>📄 <a href="dosyalar/END527-izlence.pdf" target="_blank"><span class="tr-content">Ders İzlencesini İndir</span><span class="en-content">Download Syllabus</span></a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="pub-item">
-                <h3>END 310: Facilities Planning / Tesis Planlama</h3>
-                <p>Lisans / Undergraduate Course</p>
-                📄 <a href="dosyalar/END310-syllabus.pdf" target="_blank">Syllabus (PDF)</a>
-            </div>
+            <!-- DERS 3: END 310 -->
+            <div class="course-card">
+                <h3>
+                    <span class="tr-content">END 310: Tesis Planlama</span>
+                    <span class="en-content">END 310: Facilities Planning</span>
+                </h3>
+                <p><strong><span class="tr-content">Lisans Dersi</span><span class="en-content">Undergraduate Course</span></strong></p>
+                
+                <div id="lock-310" class="course-lock">
+                    <span class="tr-content">Ders İçeriğine Erişim Kodu:</span>
+                    <span class="en-content">Access Passcode:</span> 
+                    <input type="password" id="pass-310" placeholder="Şifre">
+                    <button onclick="unlockCourse('310', 'END310')">
+                        <span class="tr-content">Giriş</span><span class="en-content">Submit</span>
+                    </button>
+                    <div id="err-310" style="color:red; display:none; margin-top:5px; font-size:0.9em;">
+                        <span class="tr-content">Hatalı kod! Lütfen tekrar deneyin.</span>
+                        <span class="en-content">Incorrect code! Please try again.</span>
+                    </div>
+                </div>
 
-            <div class="pub-item">
-                <h3>END 403 & END 492: Industrial Engineering Design & Graduation Project</h3>
-                <p>Lisans / Undergraduate Capstone Projects</p>
+                <div id="content-310" style="display:none; margin-top:15px;">
+                    <span class="unlocked-badge"><span class="tr-content">✓ Erişim Onaylandı</span><span class="en-content">✓ Access Granted</span></span>
+                    <ul>
+                        <li>📄 <a href="dosyalar/END310-izlence.pdf" target="_blank"><span class="tr-content">Ders İzlencesini İndir</span><span class="en-content">Download Syllabus</span></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- DUYURULAR / ANNOUNCEMENTS -->
+        <!-- DUYURULAR -->
         <div id="duyurular" class="tab-content">
             <h2><span class="tr-content">Duyurular</span><span class="en-content">Announcements</span></h2>
             
             <div class="announcement">
                 <span class="timeline-date">24 Ağustos 2026</span><br>
-                <span class="tr-content">Yeni akademik dönem ders izlenceleri sisteme yüklenmiştir. İlgili dersin sekmesinden erişebilirsiniz.</span>
-                <span class="en-content">Syllabi for the new academic semester have been uploaded. You can access them via the Teaching tab.</span>
+                <span class="tr-content">Yeni akademik dönem ders izlenceleri sisteme yüklenmiştir. Öğrencilerimiz ders kodlarını kullanarak Dersler sekmesinden izlencelere erişebilirler.</span>
+                <span class="en-content">Syllabi for the new academic semester have been uploaded. Students can access them in the Courses tab using their course passcode.</span>
             </div>
         </div>
 
     </div>
 
-    <!-- JavaScript logic for Tabs and Multi-language support -->
+    <!-- JavaScript Mantığı -->
     <script>
+        // Sekme Değiştirme
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -326,6 +427,19 @@
             evt.currentTarget.className += " active";
         }
 
+        // Şifreli Ders İçeriği Açma
+        function unlockCourse(courseId, correctCode) {
+            var inputVal = document.getElementById('pass-' + courseId).value;
+            if (inputVal === correctCode) {
+                document.getElementById('lock-' + courseId).style.display = 'none';
+                document.getElementById('content-' + courseId).style.display = 'block';
+                document.getElementById('err-' + courseId).style.display = 'none';
+            } else {
+                document.getElementById('err-' + courseId).style.display = 'block';
+            }
+        }
+
+        // Tam Dil Değiştirme
         function setLang(lang) {
             var trEls = document.getElementsByClassName('tr-content');
             var enEls = document.getElementsByClassName('en-content');
@@ -346,7 +460,7 @@
             }
         }
 
-        // Initialize display rules for block-level elements
+        // Başlangıç Ayarları
         document.querySelectorAll('.tr-content p, .tr-content div').forEach(el => el.style.display = 'block');
     </script>
 </body>

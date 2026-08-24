@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Nazmi Şener - Academic Webpage</title>
+    <style>
+        :root { 
+            --primary: #1e3a8a; 
+            --secondary: #3b82f6; 
+            --dark: #0f172a; 
+            --bg: #f8fafc; 
+            --text: #334155; 
+            --border: #e2e8f0;
+        }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            margin: 0; padding: 0; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+        }
+        
+        /* Header & Banner */
+        header { 
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); 
+            color: white; 
+            padding: 40px 20px; 
+            text-align: center; 
+        }
+        header h1 { margin: 0; font-size: 2.4em; font-weight: 700; letter-spacing: -0.5px; }
+        header p { margin: 10px 0 0 0; font-size: 1.1em; opacity: 0.9; }
+        .contact-info { margin-top: 15px; font-size: 0.95em; }
+        .contact-info a { color: #93c5fd; text-decoration: none; }
+
+        /* Navigation Bar & Language Controls */
+        nav { 
+            background-color: var(--dark); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            padding: 5px 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .nav-links { display: flex; flex-wrap: wrap; }
+        nav button { 
+            background: none; 
+            border: none; 
+            color: #cbd5e1; 
+            padding: 12px 18px; 
+            font-size: 0.95em; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: all 0.2s; 
+        }
+        nav button:hover, nav button.active { color: white; background-color: var(--secondary); border-radius: 4px; }
+        
+        .lang-switch { margin-left: auto; display: flex; align-items: center; gap: 5px; }
+        .lang-btn { 
+            background: #334155 !important; 
+            color: white !important; 
+            padding: 5px 10px !important; 
+            border-radius: 4px; 
+            font-size: 0.85em !important; 
+        }
+        .lang-btn.active-lang { background: var(--secondary) !important; font-weight: bold; }
+
+        /* Main Container */
+        .container { max-width: 1000px; margin: 30px auto; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        /* Typography & Components */
+        h2 { color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-top: 25px; font-size: 1.5em; }
+        h3 { color: var(--secondary); margin-bottom: 5px; font-size: 1.15em; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        a { color: var(--secondary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600; }
+        
+        /* Timelines & Cards */
+        .timeline-item { border-left: 3px solid var(--secondary); padding-left: 15px; margin-bottom: 20px; }
+        .timeline-date { font-size: 0.85em; font-weight: bold; color: #64748b; }
+        .pub-item { background: #f8fafc; border: 1px solid var(--border); padding: 15px; border-radius: 6px; margin-bottom: 12px; }
+        .pub-title { font-weight: bold; color: #1e293b; }
+        .announcement { background: #eff6ff; border-left: 4px solid var(--secondary); padding: 15px; margin-bottom: 15px; border-radius: 0 6px 6px 0; }
+
+        /* Language Toggle Classes */
+        .en-content { display: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nazmi ŞENER, Ph.D.</h1>
+        <p>
+            <span class="tr-content">Endüstri Mühendisliği | Yöneylem Araştırması & Optimizasyon</span>
+            <span class="en-content">Industrial Engineering | Operations Research & Optimization</span>
+        </p>
+        <div class="contact-info">
+            📧 <a href="mailto:sener.nazmi@gmail.com">sener.nazmi@gmail.com</a>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <button class="tab-link active" onclick="openTab(event, 'hakkimda')">
+                <span class="tr-content">Hakkımda & Özgeçmiş</span><span class="en-content">About & CV</span>
+            </button>
+            <button class="tab-link" onclick="openTab(event, 'yayinlar')">
+                <span class="tr-content">Yayınlar & Projeler</span><span class="en-content">Publications & Projects</span>
+            </button>
+            <button class="tab-link" onclick="openTab(event, 'dersler')">
+                <span class="tr-content">Dersler</span><span class="en-content">Teaching</span>
+            </button>
+            <button class="tab-link" onclick="openTab(event, 'duyurular')">
+                <span class="tr-content">Duyurular</span><span class="en-content">Announcements</span>
+            </button>
+        </div>
+        
+        <div class="lang-switch">
+            <button id="btn-tr" class="lang-btn active-lang" onclick="setLang('tr')">TR</button>
+            <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- HAKKIMDA / ABOUT ME -->
+        <div id="hakkimda" class="tab-content active">
+            <h2><span class="tr-content">Akademik Görevler</span><span class="en-content">Employment History</span></h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2024 - 2026</div>
+                <strong>Postdoctoral Researcher</strong> - Department of Mechanical, Energy and Management Engineering, University of Calabria, Italy.
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - Present</div>
+                <strong>Assistant Professor (Dr. Öğr. Üyesi)</strong> - Department of Industrial Engineering, Alanya Alaaddin Keykubat University, Turkiye.
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2012 - 2020</div>
+                <strong>Research Assistant (Arş. Gör.)</strong> - Department of Industrial Engineering, Galatasaray University, Istanbul, Turkiye.
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2010 - 2012</div>
+                <strong>Research Assistant (Arş. Gör.)</strong> - Department of Industrial Engineering, Yalova University, Yalova, Turkiye.
+            </div>
+
+            <h2><span class="tr-content">Eğitim</span><span class="en-content">Education</span></h2>
+            <div class="timeline-item">
+                <div class="timeline-date">2014 - 2020</div>
+                <strong>Ph.D. in Industrial Engineering</strong> - Galatasaray University, Istanbul, Turkiye.<br>
+                <em>Thesis: New optimization models for the hub covering location problem.</em>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2011 - 2014</div>
+                <strong>M.Sc. in Industrial Engineering</strong> - Galatasaray University, Istanbul, Turkiye.<br>
+                <em>Thesis: Risk-averse appointment scheduling for healthcare institutions.</em>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2006 - 2010</div>
+                <strong>B.Sc. in Industrial Engineering</strong> - Dokuz Eylul University, Izmir, Turkiye.
+            </div>
+
+            <h2><span class="tr-content">Beceriler & Üyelikler</span><span class="en-content">Skills & Memberships</span></h2>
+            <p><strong><span class="tr-content">Programlama / Diller:</span><span class="en-content">Coding:</span></strong> Python, C, LaTeX, Matlab</p>
+            <p><strong><span class="tr-content">Optimizasyon Yazılımları:</span><span class="en-content">Optimization Softwares:</span></strong> Gurobi, CPLEX, GAMS, AMPL</p>
+            <p><strong><span class="tr-content">Mesleki Üyelikler:</span><span class="en-content">Memberships:</span></strong> Turkish OR Society (TORS), European WG on Stochastic Programming & Applications (EWGSP)</p>
+            
+            <h2><span class="tr-content">Ödüller ve Teşvikler</span><span class="en-content">Awards & Grants</span></h2>
+            <ul>
+                <li><span class="badge">2026</span> TÜBİTAK UBYT - International Scientific Publication Incentive (Computers & Operations Research)</li>
+                <li><span class="badge">2024</span> TÜBİTAK UBYT - International Scientific Publication Incentive (IEEE Access)</li>
+                <li><span class="badge">2023</span> TÜBİTAK 2224-A - Scientific Meetings Abroad Grant</li>
+                <li><span class="badge">2021</span> TÜBİTAK UBYT - International Scientific Publication Incentive (Annals of Operations Research)</li>
+                <li><span class="badge">2010</span> YÖK - Academician Training Program (ÖYP) Grant</li>
+            </ul>
+        </div>
+
+        <!-- YAYINLAR & PROJELER / PUBLICATIONS & PROJECTS -->
+        <div id="yayinlar" class="tab-content">
+            <h2><span class="tr-content">Makaleler (Journal Articles)</span><span class="en-content">Journal Articles</span></h2>
+            
+            <div class="pub-item">
+                <div class="pub-title">P. Beraldi, L. Gallo, and N. Sener, "Reinforcement learning-driven progressive hedging for risk averse polygeneration system design"</div>
+                <em>Computers & Industrial Engineering</em>, p. 112252, 2026. <br>
+                🔗 <a href="https://doi.org/10.1016/j.cie.2026.112252" target="_blank">DOI: 10.1016/j.cie.2026.112252</a>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">P. Beraldi and N. Sener, "An integrated stochastic programming model for the fair and efficient operation of renewable energy communities"</div>
+                <em>Computers & Operations Research</em>, vol. 191, p. 107442, 2026. <br>
+                🔗 <a href="https://doi.org/10.1016/j.cor.2026.107442" target="_blank">DOI: 10.1016/j.cor.2026.107442</a>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">N. Sener, "Risk-averse green hub location under multi-source uncertainty: A cvar-based model with scenario reduction"</div>
+                <em>IEEE Access</em>, vol. 14, pp. 26621-26634, 2026. <br>
+                🔗 <a href="https://doi.org/10.1109/ACCESS.2026.3665791" target="_blank">DOI: 10.1109/ACCESS.2026.3665791</a>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">K. Özdemir, F. Göçer, M. T. Elsellum, and N. Sener, "Ranking of renewable energy alternatives by an integrated spherical fuzzy ahp and topsis: Case of alanya"</div>
+                <em>ALKÜ Fen Bilimleri Dergisi</em>, vol. 7, no. 3, pp. 152-170, 2025. <br>
+                🔗 <a href="https://doi.org/10.46740/alku.1494513" target="_blank">DOI: 10.46740/alku.1494513</a>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">N. Sener, "Capacitated single allocation green hub covering flow problem"</div>
+                <em>KSÜ Mühendislik Bilimleri Dergisi</em>, vol. 26, no. 4, pp. 983-996, 2023. <br>
+                🔗 <a href="https://doi.org/10.17780/ksujes.1339189" target="_blank">DOI: 10.17780/ksujes.1339189</a>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">N. Sener and O. Feyzioglu, "Multiple allocation hub covering flow problem under uncertainty"</div>
+                <em>Annals of Operations Research</em>, vol. 320, no. 2, pp. 975-997, 2023. <br>
+                🔗 <a href="https://doi.org/10.1007/s10479-022-04553-2" target="_blank">DOI: 10.1007/s10479-022-04553-2</a>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">F. Gocer and N. Sener, "Spherical fuzzy extension of ahp-aras methods integrated with modified k-means clustering for logistics hub location problem"</div>
+                <em>Expert Systems</em>, vol. 39, no. 2, e12886, 2022. <br>
+                🔗 <a href="https://doi.org/10.1111/exsy.12886" target="_blank">DOI: 10.1111/exsy.12886</a>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">N. Sener and O. Feyzioğlu, "Capacitated multiple allocation hub covering flow problem"</div>
+                <em>MANAS Journal of Engineering</em>, vol. 9, no. 1, pp. 72-84, 2021. <br>
+                🔗 <a href="https://doi.org/10.51354/mjen.809844" target="_blank">DOI: 10.51354/mjen.809844</a>
+            </div>
+
+            <h2><span class="tr-content">Araştırma Projeleri</span><span class="en-content">Research Projects</span></h2>
+            <ul>
+                <li>
+                    <strong>Large-scale optimization for sustainable and resilient energy systems</strong> (2023 - 2026)<br>
+                    Funded by European Union - NextGenerationEU, University of Calabria, Italy. <br>
+                    <em>Role: Researcher | Budget: €249,998 | Grant No: 2022BMBW2A</em>
+                </li>
+                <li>
+                    <strong>Hub location problems in logistic networks</strong> (2017 - 2019)<br>
+                    Funded by Galatasaray University BAP, Turkey.<br>
+                    <em>Role: Researcher | Budget: $5,500 | Grant No: 17.402.007</em>
+                </li>
+                <li>
+                    <strong>An analysis of profit maximization problem of telecommunications intermediaries...</strong> (2013 - 2015)<br>
+                    Funded by University of Yalova BAP, Turkey.<br>
+                    <em>Role: Researcher | Budget: $6,000 | Grant No: 2013/BAP/51</em>
+                </li>
+            </ul>
+
+            <h2><span class="tr-content">Konferans Bildirileri</span><span class="en-content">Conference Proceedings</span></h2>
+            <ul>
+                <li>P. Beraldi, N. Sener, and A. Algieri, "Optimal design of hybrid multigeneration systems through cvar-based risk-averse programming," <em>IMSS 2025</em>, pp. 288-297.</li>
+                <li>S. Durmaz et al., "Planning new base station locations to strengthen existing network coverage application to kestel region," <em>IMSS 2025</em>, pp. 214-225.</li>
+                <li>N. Sener, "The spherical fuzzy green hub covering flow problem," <em>INFUS 2024</em>, Springer, pp. 641-648.</li>
+                <li>N. Sener et al., "A green approach on multiple allocation hub covering flow problem," <em>APMS 2023</em>, Springer, pp. 671-680.</li>
+                <li>N. Sener and O. Feyzioglu, "Two stage stochastic optimization model for multiple allocation hub covering problem," <em>48th CIE</em>, Auckland, 2018.</li>
+            </ul>
+        </div>
+
+        <!-- DERSLER / TEACHING -->
+        <div id="dersler" class="tab-content">
+            <h2><span class="tr-content">Verilen Dersler</span><span class="en-content">Teaching Activities</span></h2>
+            <p><span class="tr-content">Alanya Alaaddin Keykubat Üniversitesi bünyesinde verilen dersler:</span>
+               <span class="en-content">Courses taught at Alanya Alaaddin Keykubat University:</span></p>
+
+            <div class="pub-item">
+                <h3>END 447: Stochastic Problems / Kesikli Problemler</h3>
+                <p>Lisans / Undergraduate Course</p>
+                📄 <a href="dosyalar/END447-syllabus.pdf" target="_blank">
+                    <span class="tr-content">Ders İzlencesini İndir (Syllabus PDF)</span>
+                    <span class="en-content">Download Syllabus (PDF)</span>
+                </a>
+            </div>
+
+            <div class="pub-item">
+                <h3>END 527: Stochastic Processes / Stokastik Süreçler</h3>
+                <p>Yüksek Lisans / Graduate Course</p>
+                📄 <a href="dosyalar/END527-syllabus.pdf" target="_blank">Syllabus (PDF)</a>
+            </div>
+
+            <div class="pub-item">
+                <h3>END 310: Facilities Planning / Tesis Planlama</h3>
+                <p>Lisans / Undergraduate Course</p>
+                📄 <a href="dosyalar/END310-syllabus.pdf" target="_blank">Syllabus (PDF)</a>
+            </div>
+
+            <div class="pub-item">
+                <h3>END 403 & END 492: Industrial Engineering Design & Graduation Project</h3>
+                <p>Lisans / Undergraduate Capstone Projects</p>
+            </div>
+        </div>
+
+        <!-- DUYURULAR / ANNOUNCEMENTS -->
+        <div id="duyurular" class="tab-content">
+            <h2><span class="tr-content">Duyurular</span><span class="en-content">Announcements</span></h2>
+            
+            <div class="announcement">
+                <span class="timeline-date">24 Ağustos 2026</span><br>
+                <span class="tr-content">Yeni akademik dönem ders izlenceleri sisteme yüklenmiştir. İlgili dersin sekmesinden erişebilirsiniz.</span>
+                <span class="en-content">Syllabi for the new academic semester have been uploaded. You can access them via the Teaching tab.</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript logic for Tabs and Multi-language support -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function setLang(lang) {
+            var trEls = document.getElementsByClassName('tr-content');
+            var enEls = document.getElementsByClassName('en-content');
+            
+            document.getElementById('btn-tr').classList.remove('active-lang');
+            document.getElementById('btn-en').classList.remove('active-lang');
+
+            if (lang === 'en') {
+                document.getElementById('btn-en').classList.add('active-lang');
+                for(var i=0; i<trEls.length; i++) trEls[i].style.display = 'none';
+                for(var i=0; i<enEls.length; i++) enEls[i].style.display = 'inline-block';
+                document.querySelectorAll('.en-content p, .en-content div').forEach(el => el.style.display = 'block');
+            } else {
+                document.getElementById('btn-tr').classList.add('active-lang');
+                for(var i=0; i<trEls.length; i++) trEls[i].style.display = 'inline-block';
+                for(var i=0; i<enEls.length; i++) enEls[i].style.display = 'none';
+                document.querySelectorAll('.tr-content p, .tr-content div').forEach(el => el.style.display = 'block');
+            }
+        }
+
+        // Initialize display rules for block-level elements
+        document.querySelectorAll('.tr-content p, .tr-content div').forEach(el => el.style.display = 'block');
+    </script>
+</body>
+</html>

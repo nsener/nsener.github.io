@@ -22,15 +22,33 @@
             line-height: 1.6; 
         }
         
-        /* Başlık ve Banner */
+        /* Arka Plan Kodlama/Optimizasyon Görselli Header */
         header { 
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); 
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.88)), 
+                        url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; 
             color: white; 
             padding: 40px 20px; 
             text-align: center; 
         }
-        header h1 { margin: 0; font-size: 2.3em; font-weight: 700; }
-        header p { margin: 10px 0 0 0; font-size: 1.1em; opacity: 0.9; }
+        
+        /* Profil Fotoğrafı Stili - 1:1 Dairesel & Yüz Odaklı */
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid #93c5fd;
+            object-fit: cover;
+            object-position: 50% 25%; /* Fotoğrafın üst/yüz kısmına odaklanır */
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+            transition: transform 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 700; }
+        header p { margin: 8px 0 0 0; font-size: 1.1em; opacity: 0.95; }
         .contact-info { margin-top: 12px; font-size: 0.95em; }
         .contact-info a { color: #93c5fd; text-decoration: none; }
 
@@ -106,6 +124,8 @@
 <body>
 
     <header>
+        <img src="profil.jpg" alt="Dr. Nazmi Şener" class="profile-img">
+        
         <h1>Dr. Nazmi ŞENER</h1>
         <p>
             <span class="tr-content">Endüstri Mühendisliği | Yöneylem Araştırması ve Optimizasyon</span>
@@ -308,7 +328,37 @@
                 <span class="en-content">Please enter the course passcode to access syllabi, slides, and announcements:</span>
             </p>
 
-            <!-- DERS 1: END 447 -->
+            <!-- DERS 1: END 429 -->
+            <div class="course-card">
+                <h3>
+                    <span class="tr-content">END 429: Hizmet Sistemleri Yönetimi</span>
+                    <span class="en-content">END 429: Service Systems Management</span>
+                </h3>
+                <p><strong><span class="tr-content">Lisans Dersi</span><span class="en-content">Undergraduate Course</span></strong></p>
+                
+                <div id="lock-429" class="course-lock">
+                    <span class="tr-content">Ders İçeriğine Erişim Kodu:</span>
+                    <span class="en-content">Access Passcode:</span> 
+                    <input type="password" id="pass-429" placeholder="Şifre">
+                    <button onclick="unlockCourse('429', '2627Fall')">
+                        <span class="tr-content">Giriş</span><span class="en-content">Submit</span>
+                    </button>
+                    <div id="err-429" style="color:red; display:none; margin-top:5px; font-size:0.9em;">
+                        <span class="tr-content">Hatalı kod! Lütfen tekrar deneyin.</span>
+                        <span class="en-content">Incorrect code! Please try again.</span>
+                    </div>
+                </div>
+
+                <div id="content-429" style="display:none; margin-top:15px;">
+                    <span class="unlocked-badge"><span class="tr-content">✓ Erişim Onaylandı</span><span class="en-content">✓ Access Granted</span></span>
+                    <ul>
+                        <li>📄 <a href="dosyalar/END429-izlence.pdf" target="_blank"><span class="tr-content">Ders İzlencesini İndir</span><span class="en-content">Download Syllabus</span></a></li>
+                        <li>📁 <a href="#"><span class="tr-content">Ders Notları ve Ödevler</span><span class="en-content">Lecture Notes & Homeworks</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DERS 2: END 447 -->
             <div class="course-card">
                 <h3>
                     <span class="tr-content">END 447: Stokastik Problemler</span>
@@ -320,7 +370,7 @@
                     <span class="tr-content">Ders İçeriğine Erişim Kodu:</span>
                     <span class="en-content">Access Passcode:</span> 
                     <input type="password" id="pass-447" placeholder="Şifre">
-                    <button onclick="unlockCourse('447', 'END447')">
+                    <button onclick="unlockCourse('447', '2627Fall')">
                         <span class="tr-content">Giriş</span><span class="en-content">Submit</span>
                     </button>
                     <div id="err-447" style="color:red; display:none; margin-top:5px; font-size:0.9em;">
@@ -338,7 +388,7 @@
                 </div>
             </div>
 
-            <!-- DERS 2: END 527 -->
+            <!-- DERS 3: END 527 -->
             <div class="course-card">
                 <h3>
                     <span class="tr-content">END 527: Stokastik Süreçler</span>
@@ -350,7 +400,7 @@
                     <span class="tr-content">Ders İçeriğine Erişim Kodu:</span>
                     <span class="en-content">Access Passcode:</span> 
                     <input type="password" id="pass-527" placeholder="Şifre">
-                    <button onclick="unlockCourse('527', 'END527')">
+                    <button onclick="unlockCourse('527', '2627Fall')">
                         <span class="tr-content">Giriş</span><span class="en-content">Submit</span>
                     </button>
                     <div id="err-527" style="color:red; display:none; margin-top:5px; font-size:0.9em;">
@@ -367,7 +417,7 @@
                 </div>
             </div>
 
-            <!-- DERS 3: END 310 -->
+            <!-- DERS 4: END 310 -->
             <div class="course-card">
                 <h3>
                     <span class="tr-content">END 310: Tesis Planlama</span>
